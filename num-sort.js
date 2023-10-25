@@ -1,9 +1,10 @@
 let numSort = function(arr) {
+// initializes categories
     let evens = [];
     let div5s = [];
     let primes = [];
 
-
+// sorting mechanism
     for (let num of arr) {
         let even = isEven(num);
         let div5 = isDiv5(num);
@@ -22,11 +23,12 @@ let numSort = function(arr) {
         }
     }
 
+// converts arrays to strings
     let evensStr = evens.join(', ');
     let div5sStr = div5s.join(', ');
     let primesStr = primes.join(', ');
 
-    let tempLiteral = `Even numbers: ${evensStr}
+    let optionalReturn = `Even numbers: ${evensStr}
     Numbers divisible by 5: ${div5sStr}
     Prime numbers: ${primesStr}`;
 
@@ -34,7 +36,7 @@ let numSort = function(arr) {
     console.log('Numbers divisible by 5: ' + div5sStr);
     console.log('Prime numbers: ' + primesStr);
 
-    // tempLiteral can used as a return statement if desired as an alternative to the console.logs
+// tempLiteral can used as a return statement if desired as an alternative to the console.logs
 };
 
 
@@ -46,6 +48,7 @@ let isDiv5 = function(num) {
     return num % 5 === 0;
 };
 
+// does not exclude 2 due to original use case requirements
 let isPrime = function(num) {
     if (num <= 1) {
         return false;
